@@ -65,7 +65,7 @@ def load_model(model_name):
 
 
 def load_tokenizer(model_name):
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, use_auth_token=False)
     tokenizer.pad_token = tokenizer.eos_token
     tokenizer.padding_side = 'left'
 
