@@ -51,5 +51,7 @@ class Conversation:
         return self._prompt
 
     @classmethod
-    def from_raw_prompt(cls, value):
-        self._prompt = value
+    def from_raw_prompt(cls, human_id, bot_id, prompt):
+        convo = Conversation(human_id, bot_id)
+        convo._prompt = prompt
+        return convo
