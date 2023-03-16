@@ -20,7 +20,7 @@ class ChatModel:
     def __init__(self, model_name, gpu_id):
         device = torch.device('cuda', gpu_id)
         model_name = "togethercomputer/GPT-NeoXT-Chat-Base-20B"
-        self._model = AutoModelForCausalLM.from_pretrained(model_name)
+        self._model = AutoModelForCausalLM.from_pretrained(model_name).half()
         self._model.to(device)
         self._tokenizer = AutoTokenizer.from_pretrained(model_name)
 
